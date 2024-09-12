@@ -47,7 +47,7 @@ public class BlackJackGame {
                     System.out.println("\nPlayer hand: " + playerHand);
                     System.out.println("Dealer hand: " + "[" + dealerHand.get(0) + "]");
                     if (playerHand.getValue() > 21) {
-                        System.out.println("\nYou just BUSTamante'd!");
+                        System.out.println("\nYou just BUSTamanted!");
                         betting.loseBet();
                         break;
                     }
@@ -79,7 +79,7 @@ public class BlackJackGame {
                     Thread.sleep(1000);
                     System.out.println("\nIt's a blackjack tie!");
                     betting.tieBet();
-                } else if (dealerValue == 21) {
+                } else if (dealerValue == 21 && dealerHand.handSize() == 2) {
                     Thread.sleep(1000);
                     System.out.println("\nDealer has a blackjack!");
                 } else if (playerValue == 21 && playerHand.handSize() == 2) {
