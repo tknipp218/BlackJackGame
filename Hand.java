@@ -45,6 +45,10 @@ public class Hand {
         cards.clear();
     }
 
+    public int handSize() {
+        return cards.size(); 
+    }
+
     //returns the hand as a string
     @Override
     public String toString() {

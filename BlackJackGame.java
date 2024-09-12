@@ -45,9 +45,9 @@ public class BlackJackGame {
                 //player's turn
                 while (true) {
                     System.out.println("\nPlayer hand: " + playerHand);
-                    System.out.println("Dealer hand: " + dealerHand.get(0));
+                    System.out.println("Dealer hand: " + "[" + dealerHand.get(0) + "]");
                     if (playerHand.getValue() > 21) {
-                        System.out.println("You just BUSTamante'd!");
+                        System.out.println("\nYou just BUSTamante'd!");
                         betting.loseBet();
                         break;
                     }
@@ -75,7 +75,14 @@ public class BlackJackGame {
                 System.out.println("Dealer's hand: " + dealerValue);
 
                 //determines the winner
-                if (playerHand.getValue() == 21) {
+                if (dealerValue == 21 && playerValue == 21) {
+                    Thread.sleep(1000);
+                    System.out.println("\nIt's a blackjack tie!");
+                    betting.tieBet();
+                } else if (dealerValue == 21) {
+                    Thread.sleep(1000);
+                    System.out.println("\nDealer has a blackjack!");
+                } else if (playerValue == 21 && playerHand.handSize() == 2) {
                     Thread.sleep(1000);
                     System.out.println("\nPlayer has a blackjack!");
                     betting.winBlackJack();
