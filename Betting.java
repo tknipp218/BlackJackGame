@@ -6,6 +6,7 @@ public class Betting {
         this.playerChips = initialChips;
     }
 
+    //places bet and checks if it is possible
     public boolean placeBet(int amount) {
         if (amount > playerChips) {
             System.out.println("You don't have enough chips to place that bet.");
